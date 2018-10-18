@@ -1,0 +1,45 @@
+{
+  "name": "testing-tools-config",
+  "version": "1.0.0",
+  "description": "Estruturando ferramentas de teste",
+  "main": "./src/app.js",
+  "scripts": {
+    "build": "webpack --colors --progress",
+    "watch": "npm run build -- --watch",
+    "lint": "eslint src/*.js",
+    "precommit": "npm run lint",
+    "prepush": "npm run lint",
+    "server": "webpack-dev-server --inline --open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/caprabell//Testing-tools-config.git"
+  },
+  "keywords": [
+    "js",
+    "tdd",
+    "library"
+  ],
+  "author": "Mauricio Bell",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/caprabell//Testing-tools-config/issues"
+  },
+  "homepage": "https://github.com/caprabell//Testing-tools-config#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.0.0",
+    "babel-preset-es2015-native-modules": "^6.9.4",
+    "eslint": "^5.6.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "husky": "^0.14.3",
+    "webpack": "^2.4.1",
+    "webpack-dev-server": "^1.16.2"
+  },
+  "dependencies": {
+    "ramda": "^0.25.0",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2"
+  }
+}
