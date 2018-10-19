@@ -1,21 +1,21 @@
-describe('Main', function() {
-    describe('Method A', function() {
-        context('Case 1', function() {
-            it.skip('should happen ...', function() {
-                // skip para pular o bloco
-                // espera que aconteça
-                // entra dados / metodo sum(2,2)
-                // espera retornar (4) => true | (3) => false => broken test
-            });
-        });
-        context('Case 2', function() {
-            // only para rodar só um bloco
-            it('should happen ...', function() {
-
-            });
-        });
+describe('Main', () => {
+  describe('Method A', () => {
+    context('Case 1', () => {
+      it.skip('should happen ...', () => {
+        // skip para pular o bloco
+        // espera que aconteça
+        // entra dados / metodo sum(2,2)
+        // espera retornar (4) => true | (3) => false => broken test
+      });
     });
-    describe('Method b', function() {
+    context('Case 2', () => {
+      // only para rodar só um bloco
+      it('should happen ...', () => {
 
+      });
     });
+  });
+  describe('Method b', () => {
+
+  });
 });
