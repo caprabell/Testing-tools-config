@@ -6,13 +6,12 @@
   "scripts": {
     "build": "webpack --colors --progress",
     "watch": "npm run build -- --watch",
-    "lint": "eslint src/*.js tests/*.spec.js",
+    "lint": "eslint src/*.js",
     "precommit": "npm run lint",
     "prepush": "npm run lint",
     "server": "webpack-dev-server --inline --open",
     "test": "mocha tests/**/*.spec.js",
     "test:tdd": "mocha tests/**/*.spec.js --watch"
-
   },
   "repository": {
     "type": "git",

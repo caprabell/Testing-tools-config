@@ -1,6 +1,6 @@
 const expect = require('chai').expect;
 
-describe('Before and After', () => {
+describe.skip('Before and After', () => {
   let arr;
 
   // roda uma vez, antes do bloco
