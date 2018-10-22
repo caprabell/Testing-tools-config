@@ -1,61 +1,40 @@
+/*
+Escrever uma lib que receba um número e:
+
+Se número for divisível por 3, escreva 'Fizz'
+Se número for divisível por 5, escreva 'Buzz'
+Se número for divisível por 3 e 5, escreva 'FizzBuzz'
+Se não for multiplo de nada, retorna o número
+*/
+
 import { expect } from 'chai';
-import { sum, sub, mult, div } from '../src/main';
+import fizzbuzz from '../src/main.js';
 
-describe('Calc', () => {
+describe('Main', () => {
 
-  // smoke tests
-  describe('Smoke Test',() => {
+  it('Should exist a method `FizzBuzz`', () =>  {
+    expect(fizzbuzz).to.exist;
+    expect(fizzbuzz).to.be.a('function');
+  });
 
-    it('Should exist the method `sum`',() => {
-       expect(sum).to.exist;
-       expect(sum).to.be.a('function');  
-    });
+  it('Should return `Fizz` when `fizzbuzz(3)`', ()=> {
+    expect(fizzbuzz(3)).to.be.equal('Fizz');
+  });
+
+  it('Should return `Buzz` when `fizzbuzz(5)`', () => {
+    expect(fizzbuzz(5)).to.be.equal('Buzz');
+  });
+
+  it('Should return `fizzbuzz` when `fizzbuzz(15)`', () => {
+    expect(fizzbuzz(15)).to.be.equal(`Fizzbuzz`);
+  });
+
+  it('Should return `num` when `fizzbuzz(7)`', () => {
+    expect(fizzbuzz(7)).to.be.equal(7);
+  });
   
-    it('Should exist the method `sub`',() => {
-      expect(sub).to.exist;
-      expect(sub).to.be.a('function');  
-    });
-
-    it('Should exist the method `mult`',() => {
-    expect(mult).to.exist;
-    expect(mult).to.be.a('function');  
-     });
-
-    it('Should exist the method `div`',() => {
-      expect(div).to.exist;
-      expect(div).to.be.a('function');  
-    });
+  it('Should return `num` when fizzbuzz(0)', () => {
+    expect(fizzbuzz(0)).to.be.equal(0);
   });
-
-  describe('Sum',() => {
-    it('Should return 6 when `sum(3,3)`',() => {
-      expect(sum(3, 3)).to.be.equal(6); 
-    });
-  });
-
-  describe('Sub',() => {
-    it('Should return 3 when `sub(6,3)`',() => {
-      expect(sub(6, 3)).to.be.equal(3);
-    });
-    it('Should return -4 when `sub(6,10)`',() => {
-      expect(sub(6, 10)).to.be.equal(-4);
-    })
-  });
-
-  describe('Mult',() => {
-    it('Should return 9 when `mult(3,3)`',() => {
-      expect(mult(3, 3)).to.be.equal(9); 
-    });
-  });
-
-  describe('Div',() => {
-    it('Should return 2 when `div(6,3)`',() => {
-      expect(div(6, 3)).to.be.equal(2);
-    });
-    it('Should return `Não é possível divisão por Zero`',() => {
-      expect(div(6, 0)).to.be.equal(`Não é possível divisão por Zero!`);
-    });
-  });
-
 
 });
