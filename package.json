@@ -8,10 +8,23 @@
     "watch": "npm run build -- --watch",
     "lint": "eslint src/*.js",
     "precommit": "npm run lint",
-    "prepush": "npm run lint",
+    "prepush": "npm run lint && npm run test:coverage",
     "server": "webpack-dev-server --inline --open",
-    "test": "mocha tests/**/*.spec.js --require babel-register",
-    "test:tdd": "mocha tests/**/*.spec.js --watch"
+    "test": "mocha tests/**/main.spec.js --require babel-register",
+    "test:tdd": "mocha tests/**/main.spec.js --watch",
+    "test:coverage": "nyc npm test"
+  },
+  "nyc": {
+    "functions": 80,
+    "lines": 80,
+    "check-coverage": true,
+    "reporter": [
+      "text",
+      "html"
+    ],
+    "exclude": [
+      "tests/**"
+    ]
   },
   "repository": {
     "type": "git",
@@ -40,6 +53,7 @@
     "eslint-plugin-import": "^2.14.0",
     "husky": "^0.14.3",
     "mocha": "^5.2.0",
+    "nyc": "^10.2.0",
     "webpack": "^2.4.1",
     "webpack-dev-server": "^1.16.2"
   },
